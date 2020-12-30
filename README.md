@@ -6,4 +6,5 @@ description: کتابی درباره ساختمان داده‌ها و الگو�
 
 کتاب در آدرس ذیل در دسترس است:
 
-https://mahrad-hanaforoosh.gitbook.io/dsa/
+[https://mahrad-hanaforoosh.gitbook.io/dsa/](https://mahrad-hanaforoosh.gitbook.io/dsa/)
+
