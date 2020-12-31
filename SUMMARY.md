@@ -1,10 +1,10 @@
 # Table of contents
 
 * [ساختمان داده‌ها و الگوریتم‌ها](README.md)
+* [مقدمه](introduction.md)
 
 ## بخش اول - مقدمات و ساختمان داده‌ها <a id="part-1"></a>
 
-* [مقدمه](part-1/introduction.md)
 * [رشد توابع](part-1/growth-of-functions.md)
 * [ساختمان داده‌های پایه](part-1/elementary-data-structures.md)
 * [جداول درهم‌ساز](part-1/hash-tables.md)
