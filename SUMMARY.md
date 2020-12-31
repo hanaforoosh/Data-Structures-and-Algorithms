@@ -2,20 +2,20 @@
 
 * [ساختمان داده‌ها و الگوریتم‌ها](README.md)
 
-## بخش اول - مقدمات و ساختمان داده‌ها <a id="bkhsh-awl"></a>
+## بخش اول - مقدمات و ساختمان داده‌ها <a id="part-1"></a>
 
-* [مقدمه](bkhsh-awl/introduction.md)
-* [رشد توابع](bkhsh-awl/growth-of-functions.md)
-* [ساختمان داده‌های پایه](bkhsh-awl/elementary-data-structures.md)
-* [جداول درهم‌ساز](bkhsh-awl/hash-tables.md)
-* [درخت‌‌ها](bkhsh-awl/trees.md)
-* [گراف](bkhsh-awl/graph.md)
+* [مقدمه](part-1/introduction.md)
+* [رشد توابع](part-1/growth-of-functions.md)
+* [ساختمان داده‌های پایه](part-1/elementary-data-structures.md)
+* [جداول درهم‌ساز](part-1/hash-tables.md)
+* [درخت‌‌ها](part-1/trees.md)
+* [گراف](part-1/graph.md)
 
-## بخش دوم - الگوریتم‌ها و سازوکارها
+## بخش دوم - الگوریتم‌ها و سازوکارها <a id="part-2"></a>
 
-* [تقسیم و غلبه](bkhsh-dwm-algwrytm-ha-w-sazwkarha/divide-and-conquer.md)
-* [مرتب‌سازی‌ها](bkhsh-dwm-algwrytm-ha-w-sazwkarha/sort.md)
-* [الگوریتم‌های حریصانه](bkhsh-dwm-algwrytm-ha-w-sazwkarha/greedy-algorithms.md)
-* [برنامه‌نویسی پویا](bkhsh-dwm-algwrytm-ha-w-sazwkarha/dynamic-programming.md)
-* [تحلیل استهلاکی](bkhsh-dwm-algwrytm-ha-w-sazwkarha/amortized-analysis.md)
+* [تقسیم و غلبه](part-2/divide-and-conquer.md)
+* [مرتب‌سازی‌ها](part-2/sort.md)
+* [الگوریتم‌های حریصانه](part-2/greedy-algorithms.md)
+* [برنامه‌نویسی پویا](part-2/dynamic-programming.md)
+* [تحلیل استهلاکی](part-2/amortized-analysis.md)
 
