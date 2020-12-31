@@ -1,8 +1,7 @@
-# Table of contents
+# فهرست مطالب
 
 * [ساختمان داده‌ها و الگوریتم‌ها](README.md)
 
-## فصل اول: مفاهیم اولیه <a id="chapter-1"></a>
+# بخش اول
 
-* [مقدمه](chapter-1/1-1.md)
-
+* [مقدمه](part-1/Introduction.md)
