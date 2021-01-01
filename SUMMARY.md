@@ -20,6 +20,7 @@
   * [درخت ای وی ال](part-1/trees/avl-tree.md)
   * [درخت بی](part-1/trees/b-tree.md)
   * [هرم](part-1/trees/heap.md)
+  * [هرم فیبوناچی](part-1/trees/fibonacci-heaps.md)
 * [گراف](part-1/graph/README.md)
   * [نمایش‌های گراف](part-1/graph/graph-representations.md)
   * [جستجوی اول-عمق](part-1/graph/breadth-first-search.md)
