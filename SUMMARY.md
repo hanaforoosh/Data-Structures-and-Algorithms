@@ -6,7 +6,7 @@
 ## بخش اول - مقدمات و ساختمان داده‌ها <a id="part-1"></a>
 
 * [رشد توابع](part-1/growth-of-functions.md)
-* [ساختمان داده‌های پایه](part-1/elementary-data-structures.md)
+    1. [ساختمان داده‌های پایه](part-1/elementary-data-structures.md)
 * [جداول درهم‌ساز](part-1/hash-tables.md)
 * [درخت‌‌ها](part-1/trees.md)
 * [گراف](part-1/graph.md)
