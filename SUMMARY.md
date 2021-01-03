@@ -6,6 +6,7 @@
 ## بخش اول - مقدمات و ساختمان داده‌ها <a id="part-1"></a>
 
 * [رشد توابع](part-1/growth-of-functions/README.md)
+  * [Untitled](part-1/growth-of-functions/untitled.md)
   * [نمادهای مجانبی](part-1/growth-of-functions/asymptotic-notation.md)
   * [نمادهای معیار و توابع مرسوم](part-1/growth-of-functions/standard-notations-and-common-functions.md)
 * [ساختمان داده‌های پایه](part-1/elementary-data-structures/README.md)
