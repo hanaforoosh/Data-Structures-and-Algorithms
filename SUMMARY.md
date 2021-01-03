@@ -4,7 +4,7 @@
 * [مقدمه](introduction.md)
 
 ## بخش اول - مقدمات و ساختمان داده‌ها <a id="part-1"></a>
-
+* [تست](mygraph.html)
 * [رشد توابع](part-1/growth-of-functions/README.md)
   * [Untitled](part-1/growth-of-functions/untitled.md)
   * [نمادهای مجانبی](part-1/growth-of-functions/asymptotic-notation.md)
