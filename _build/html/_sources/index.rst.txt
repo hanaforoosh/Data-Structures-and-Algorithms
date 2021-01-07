@@ -1,0 +1,79 @@
+.. Data structures & Algorithms documentation master file, created by
+   sphinx-quickstart on Tue Jan  5 00:42:04 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+ساختمان‌داده‌ها و الگوریتم‌ها
+========================================================
+
+.. toctree::
+   :maxdepth: 10
+   :caption: فهرست مطالب:
+
+   contents/introduction
+   contents/part-1/growth-of-functions/README
+   contents/part-1/growth-of-functions/asymptotic-notation
+   contents/part-1/growth-of-functions/standard-notations-and-common-functions
+   contents/part-1/elementary-data-structures/README
+   contents/part-1/elementary-data-structures/stack
+   contents/part-1/elementary-data-structures/queue
+   contents/part-1/elementary-data-structures/linked-lists
+   contents/part-1/hash-tables/README
+   contents/part-1/hash-tables/hash-tables-2
+   contents/part-1/hash-tables/hash-functions
+   contents/part-1/trees/README
+   contents/part-1/trees/rooted-tree
+   contents/part-1/trees/binary-search-tree
+   contents/part-1/trees/red-black-tree
+   contents/part-1/trees/avl-tree
+   contents/part-1/trees/b-tree
+   contents/part-1/trees/heap
+   contents/part-1/trees/fibonacci-heaps
+   contents/part-1/graph/README
+   contents/part-1/graph/graph-representations
+   contents/part-1/graph/breadth-first-search
+   contents/part-1/graph/depth-first-search
+   contents/part-1/graph/topological-sort
+   contents/part-1/graph/connected-components
+   contents/part-1/graph/minimum-spanning-tree
+   contents/part-1/graph/the-algorithms-of-kruskal-and-prim
+   contents/part-1/graph/single-source-shortest-paths
+   contents/part-1/graph/the-bellman-ford-algorithm
+   contents/part-1/graph/single-source-shortest-paths-in-directed-acyclic-graphs
+   contents/part-1/graph/dijkstras-algorithm
+   contents/part-1/graph/all-pairs-shortest-paths
+   contents/part-1/graph/shortest-paths-and-matrix-multiplication
+   contents/part-1/graph/the-floyd-warshall-algorithm
+   contents/part-1/graph/johnsons-algorithm-for-sparse-graphs
+   contents/part-1/graph/maximum-flow
+   contents/part-1/graph/flow-networks
+   contents/part-1/graph/maximum-bipartite-matching
+   contents/part-2/divide-and-conquer/README
+   contents/part-2/divide-and-conquer/the-maximum-subarray-problem
+   contents/part-2/divide-and-conquer/strassens-algorithm-for-matrix-multiplication
+   contents/part-2/divide-and-conquer/the-substitution-method-for-solving-recurrences
+   contents/part-2/divide-and-conquer/the-recursion-tree-method-for-solving-recurrences
+   contents/part-2/divide-and-conquer/the-master-method-for-solving-recurrences
+   contents/part-2/divide-and-conquer/proof-of-the-master-theorem
+   contents/part-2/sort/README
+   contents/part-2/sort/insertion-sort
+   contents/part-2/sort/heapsort
+   contents/part-2/sort/quicksort
+   contents/part-2/sort/merge-sort
+   contents/part-2/sort/sorting-in-linear-time
+   contents/part-2/sort/medians-and-order-statistics
+   contents/part-2/greedy-algorithms/README
+   contents/part-2/greedy-algorithms/an-activity-selection-problem
+   contents/part-2/greedy-algorithms/elements-of-the-greedy-strategy
+   contents/part-2/greedy-algorithms/huffman-codes
+   contents/part-2/dynamic-programming/README
+   contents/part-2/dynamic-programming/rod-cutting
+   contents/part-2/dynamic-programming/matrix-chain-multiplication
+   contents/part-2/dynamic-programming/elements-of-dynamic-programming
+   contents/part-2/dynamic-programming/longest-common-subsequence
+   contents/part-2/dynamic-programming/optimal-binary-search-trees
+   contents/part-2/amortized-analysis/README
+   contents/part-2/amortized-analysis/aggregate-analysis
+   contents/part-2/amortized-analysis/the-accounting-method
+   contents/part-2/amortized-analysis/the-potential-method
+   contents/part-2/amortized-analysis/dynamic-tables
