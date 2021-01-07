@@ -1,4 +1,4 @@
 env
 _build
 docs/doctrees
-docs/html/doctrees
+docs/html/.doctrees
