@@ -12,4 +12,3 @@
 .. video:: ../../../_static/avl.mp4
    :width: 500
    :height: 300
-   :autoplay:
