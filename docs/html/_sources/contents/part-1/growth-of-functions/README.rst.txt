@@ -7,6 +7,7 @@
 
 .. image:: /_static/fun_growth.png
     :align: center
+    :alt: مقایسه رشد توابع
 
 .. video:: ../../../_static/avl.mp4
    :width: 500
