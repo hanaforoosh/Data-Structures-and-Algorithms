@@ -37,7 +37,7 @@ author = 'M. Hanaforoosh, F. Bakhshi'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.video']
+extensions = ['recommonmark','sphinx_markdown_tables','sphinxcontrib.video','sphinx.ext.mathjax']
 source_suffix = {
     '.rst': 'restructuredtext',
     '.txt': 'markdown',
