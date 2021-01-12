@@ -20,7 +20,7 @@
 
 
     
-         <title>نمادهای مجانبی &mdash; ساختمان‌داده‌ها و الگوریتم‌ها  documentation</title>
+         <title>الگوریتم‌ها &mdash; ساختمان‌داده‌ها و الگوریتم‌ها  documentation</title>
     
 
 
@@ -42,9 +42,9 @@
         <link rel="index" title="فهرست" href="../../../genindex.html" />
         <link rel="search" title="جستجو" href="../../../search.html" />
         <link rel="top" title="ساختمان‌داده‌ها و الگوریتم‌ها  documentation" href="../../../index.html" />
-        <link rel="up" title="بخش اول: آشنایی با ساختمان‌داده‌ها" href="../index.html" />
-        <link rel="next" title="نمادهای معیار و توابع مرسوم" href="standard-notations-and-common-functions.html" />
-        <link rel="prev" title="رشد توابع" href="README.html" />
+        <link rel="up" title="تحلیل بنیادین الگوریتم‌ها" href="index.html" />
+        <link rel="next" title="رشد توابع" href="2-Growth%20of%20functions.html" />
+        <link rel="prev" title="تحلیل بنیادین الگوریتم‌ها" href="index.html" />
 
 
 
@@ -121,9 +121,7 @@
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">مقدمه</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">بخش اول: آشنایی با ساختمان‌داده‌ها</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="README.html">رشد توابع</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">نمادهای مجانبی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="standard-notations-and-common-functions.html">نمادهای معیار و توابع مرسوم</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">تحلیل بنیادین الگوریتم‌ها</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/README.html">ساختمان داده‌های پایه</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/stack.html">پشته</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/queue.html">صف</a></li>
@@ -222,11 +220,11 @@
     
         <a href="../../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; نمادهای مجانبی</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; الگوریتم‌ها</a>
     
     
         
-            <a href="../../../_sources/contents/part-1/growth-of-functions/asymptotic-notation.md.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
+            <a href="../../../_sources/contents/part-1/1-Fundamental Analysis of Algorithms/1-Algorithms.md.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
         
     
 </div>
@@ -237,41 +235,60 @@
 			        <div class="col-lg-12 text-content">
 				    
   <div class="section" id="id1">
-<h1>نمادهای مجانبی<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
-<div class="section" id="o">
-<h2>O<a class="headerlink" href="#o" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>مجموعه توابعی که کران بالا برای تابع تعیین می‌کنند و به شکل زیر تعریف می‌شود:</p>
+<h1>الگوریتم‌ها<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>تصور کنید هر دنباله‌ای از دستورالعمل‌های ساده که کاری انجام دهد را الگوریتم بنامیم. به عبارت دقیق‌تر، دنباله‌ای خوش‌تعریف از دستورات که <strong>ورودی(ها)</strong> را به <strong>خروجی(ها)</strong> تبدیل کنند را الگوریتم می‌نامیم. با این تعریف، دستور طبخ یک غذا که مواد اولیه (<strong>ورودی‌ها</strong>) را به غذای مورد نظر(<strong>خروجی</strong>)
+تبدیل می‌کند یا برنامه‌ای که اعداد کوچکتر از ۱۰۰ را روی صفحه نمایش چاپ می‌کند (<strong>ورودی:</strong> ندارد، <strong>خروجی:</strong> چاپ اعداد) را می‌توان الگوریتم نامید. بیایید به مثال برنامه کامپیوتری بپردازیم. شما این برنامه را چگونه پیاده‌سازی می‌کنید؟ یک پیاده‌سازی به زبان سطح بالای پایتون می‌تواند مطابق ذیل باشد.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+       <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>اگر بخواهیم برنامه‌ای بنویسیم که اعداد ۱ تا n را چاپ کند چطور؟ (<strong>ورودی:</strong> مقدار n <strong>خروجی:</strong> چاپ اعداد ۱ تا n) تابع زیر این کار را انجام می‌دهد.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">def</span> <span class="nf">print_nums</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+       <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+           <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>در حقیقت، توانستیم <strong>الگوریتمی</strong> ارائه دهیم که اعداد ۱ تا n را روی صفحه چاپ کند.
+فرض کنید که ما هر دو کد را روی یک سیستم یکسان اجرا می‌کنیم. ما در مورد زمانی که طول می‌کشد یک دستور ساده (مانند جمع یا انتساب) در این سیستم اجرا شود اطلاعی نداریم. اما می‌دانیم که اگر دستور انتساب به اندازه <span class="math notranslate nohighlight">\( t_{انتساب} \)</span> طول بکشد، با تکرار اجرای الگوریتم، زمان اجرای دستور انتساب تغییر نخواهد کرد.
+با این فرض می‌توانیم زمان اجرای کد اول را محاسبه کنیم:</p>
 <div class="math notranslate nohighlight">
-\[O(g(n))={f(n):\exists C,n_0&gt;0,\forall n \ge n_0: 0 \le f(n) \le c g(n)}\]</div>
+\[   T_{اولی} = t_{range} + 100 \times (t_{انتساب}+t_{print})\]</div>
+<p>حالا اگر بخواهیم در مورد زمان اجرای کد دوم اظهار نظر کنیم چه می‌توانیم بگوییم؟</p>
+<div class="math notranslate nohighlight">
+\[   T_{دومی}{(n)} = t_{range} + n \times (t_{انتساب}+t_{print})\]</div>
+<div class="admonition warning">
+<p class="admonition-title">هشدار</p>
+<p>دستور for نوشته‌شده به زبان پایتون، در واقع ساختار متفاوتی با سایر زبان‌ها مانند سی و جاوا دارد. در اینجا مقدار i یکی یکی زیاد نمی‌شود، بلکه هر بار مقدار جدیدی به i منتسب می‌شود. به همین دلیل ۱۰۰ بار عمل انتساب انجام می‌شود. همچنین فرض بر این است که زمان اجرای توابع print و range مستقل از ورودی هستند.</p>
 </div>
-<div class="section" id="id2">
-<h2>Ω<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>مجموعه توابعی که کران پایین برای تابع تعیین می‌کنند و به شکل زیر تعریف می‌شود:
-$$
-Ω(g(n))={f(n):\exists C,n_0&gt;0,\forall n \ge n_0: 0 \le c g(n) \le f(n)}
-$$</p>
+<p>نکته حائز اهمیت در اینجا این است که زمان اجرای کد دوم بر خلاف کد اول، مقدار ثابتی ندارد و <strong>تابعی</strong> از ورودی است. اما چنین موضوعی چه اهمیتی برای ما، به عنوان <strong>طراحان الگوریتم</strong> دارد؟ ابتدا اجازه دهید در مورد اهمیت زمان اجرای الگوریتم‌ها گپی بزنیم.</p>
+<div class="admonition important">
+<p class="admonition-title">مهم</p>
+<p>در دنیای کامپیوتر (و شاید تمام جهان!) <strong>فضا</strong> و <strong>زمان</strong> مهم‌ترین ارکان هستند. همواره در تلاشیم که مقدار کمی از آن‌ها را مصرف کنیم! طراحی الگوریتم‌ها نیز از این قاعده مستثنی نیست، در اینجا هم می‌کوشیم حتی‌المقدور، الگوریتمی ارائه دهیم که زمان اجرای آن ‌کوتاه و فضای مصرفی آن اندک باشد. به همین دلیل لازم است در مورد فضای مصرفی و زمان اجرای الگوریتم‌ها بحث کنیم و بتوانیم الگوریتم‌های مختلف که برای یک مسأله ارائه شدند را بسنجیم و با هم مقایسه کنیم تا بتوانیم میان آن‌ها تصمیم‌گیری کنیم. سعی می‌کنیم راه حلی عمومی را معرفی می‌کنیم که با کمک آن، هم بتوان زمان اجرا و هم فضای مصرفی را مقایسه کرد.</p>
 </div>
-<div class="section" id="id3">
-<h2>θ<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>مجموعه توابعی که هم کران بالا و هم کران پایین برای تابع تعیین می‌کنند و به شکل زیر تعریف می‌شود:
-$$
-θ(g(n))={f(n):\exists C1,C2,n_0&gt;0,\forall n \ge n_0: 0 \le C1 g(n) \le f(n) \le C2 g(n)}
-$$</p>
-</div>
-<div class="section" id="id4">
-<h2>o<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>مجموعه توابعی که کران بالا برای تابع تعیین می‌کنند اما هیچگاه برابر با اندازه تابع نمی‌شود و به شکل زیر تعریف می‌شود:
-$$
-o(g(n))={f(n):\exists C,n_0&gt;0,\forall n \ge n_0: 0 \le f(n) &lt; c g(n)}
-$$</p>
-</div>
-<div class="section" id="id5">
-<h2>ω<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>مجموعه توابعی که کران پایین برای تابع تعیین می‌کنند اما هیچگاه برابر با اندازه تابع نمی‌شود و به شکل زیر تعریف می‌شود:
-$$
-ω(g(n))={f(n):\exists C,n_0&gt;0,\forall n \ge n_0: 0 \le c g(n) &lt; f(n)}
-$$</p>
-</div>
+<p>برگردیم به کدها. اگر بخواهیم زمان اجرای دو کد گفته شده را با یکدیگر مقایسه کنیم، می‌توانیم به این شکل تحلیل کنیم که اگر <strong>ورودی</strong> در کد دوم، کمتر از ۱۰۰ باشد، آنگاه سرعت کد دوم بیشتر است و زمان اجرای کمتری دارد. اگر <strong>ورودی</strong> در کد دوم برابر با ۱۰۰ باشد، زمان‌های اجرا یکسان هستند و اگر <strong>ورودی</strong> در کد دوم بیش از ۱۰۰ باشد، زمان اجرای کد دوم بیشتر از کد اول خواهد بود.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>اندازه ورودی</th>
+<th>کد سریع‌تر</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>کمتر از ۱۰۰</td>
+<td>کد دوم</td>
+</tr>
+<tr>
+<td>۱۰۰</td>
+<td>برابر</td>
+</tr>
+<tr>
+<td>بیش از ۱۰۰</td>
+<td>کد اول</td>
+</tr>
+</tbody>
+</table><p>اگر بخواهیم نظر نهایی را صادر کنیم، آیا می‌شود گفت که کد دوم سریعتر از کد اول است یا کندتر از آن؟ آیا راهی وجود دارد که بتوانیم یک نظر کلی دهیم؟ یعنی در مقایسه دو کد (یا الگوریتم) بتوان با قاطعیت گفت که یا زمان اجرای برابری دارند یا زمان یکی از دیگری بیشتر است.
+پاسخ <strong>مثبت</strong> است. در واقع برای مقایسه زمان اجرای دو الگوریتم، لازم است که توابع زمان‌های اجراهای دو الگوریتم را با یکدیگر مقایسه کنیم. یعنی اگر بتوانیم یک روش قیاس برای توابع ارائه دهیم، آنگاه مقایسه زمان اجرای دو الگوریتم (و فضای مصرفی آن‌ها) کار دشواری نخواهد بود.</p>
 </div>
 
 
@@ -286,10 +303,10 @@ $$</p>
             <div id="body-btn">
                 
                     
-                    <a href="README.html" style="float:right;" title="رشد توابع" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
+                    <a href="index.html" style="float:right;" title="تحلیل بنیادین الگوریتم‌ها" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="standard-notations-and-common-functions.html" style="float:left;" title="نمادهای معیار و توابع مرسوم" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="2-Growth%20of%20functions.html" style="float:left;" title="رشد توابع" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>

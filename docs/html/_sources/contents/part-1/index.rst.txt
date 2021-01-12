@@ -6,9 +6,7 @@
 .. toctree::
    :maxdepth: 10
    
-   growth-of-functions/README
-   growth-of-functions/asymptotic-notation
-   growth-of-functions/standard-notations-and-common-functions
+   1-Fundamental Analysis of Algorithms/index
    elementary-data-structures/README
    elementary-data-structures/stack
    elementary-data-structures/queue

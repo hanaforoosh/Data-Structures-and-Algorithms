@@ -42,9 +42,9 @@
         <link rel="index" title="فهرست" href="../../../genindex.html" />
         <link rel="search" title="جستجو" href="../../../search.html" />
         <link rel="top" title="ساختمان‌داده‌ها و الگوریتم‌ها  documentation" href="../../../index.html" />
-        <link rel="up" title="بخش اول: آشنایی با ساختمان‌داده‌ها" href="../index.html" />
-        <link rel="next" title="نمادهای مجانبی" href="asymptotic-notation.html" />
-        <link rel="prev" title="بخش اول: آشنایی با ساختمان‌داده‌ها" href="../index.html" />
+        <link rel="up" title="تحلیل بنیادین الگوریتم‌ها" href="index.html" />
+        <link rel="next" title="نمادهای مجانبی" href="3-Asymptotic%20Notation.html" />
+        <link rel="prev" title="الگوریتم‌ها" href="1-Algorithms.html" />
 
 
 
@@ -121,9 +121,7 @@
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">مقدمه</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">بخش اول: آشنایی با ساختمان‌داده‌ها</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">رشد توابع</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asymptotic-notation.html">نمادهای مجانبی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="standard-notations-and-common-functions.html">نمادهای معیار و توابع مرسوم</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">تحلیل بنیادین الگوریتم‌ها</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/README.html">ساختمان داده‌های پایه</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/stack.html">پشته</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/queue.html">صف</a></li>
@@ -226,7 +224,7 @@
     
     
         
-            <a href="../../../_sources/contents/part-1/growth-of-functions/README.md.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
+            <a href="../../../_sources/contents/part-1/1-Fundamental Analysis of Algorithms/2-Growth of functions.md.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
         
     
 </div>
@@ -238,57 +236,20 @@
 				    
   <div class="section" id="id1">
 <h1>رشد توابع<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
-<p>اگر چه هنوز الگوریتم را به شکل رسمی تعریف نکرده‌ایم اما تصور کنید هر دنباله‌ای از دستورالعمل‌های ساده که کاری انجام دهد را الگوریتم بنامیم. با این تعریف، دستور طبخ یک غذا یا برنامه‌ای که اعداد کوچکتر از ۱۰۰ را روی صفحه نمایش چاپ می‌کند را می‌توان الگوریتم نامید. بیایید به مثال برنامه کامپیوتری بپردازیم. شما این برنامه را چگونه پیاده‌سازی می‌کنید؟ یک پیاده‌سازی به زبان سطح بالای پایتون می‌تواند مطابق ذیل باشد.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
-       <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>اگر بخواهیم برنامه‌ای بنویسیم که اعداد ۱ تا n را چاپ کند چطور؟ تابع زیر این کار را انجام می‌دهد.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">def</span> <span class="nf">print_nums</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-       <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-           <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>در حقیقت، ما توانستیم الگوریتمی ارائه دهیم که اعداد ۱ تا n را روی صفحه چاپ کند.
-فرض کنید که ما هر دو کد را روی یک سیستم یکسان اجرا می‌کنیم. ما در مورد زمانی که طول می‌کشد یک دستور ساده (مانند جمع یا انتساب) در این سیستم اجرا شود اطلاعی نداریم. اما می‌دانیم که اگر دستور جمع به اندازه <span class="math notranslate nohighlight">\( t_{جمع} \)</span> طول بکشد، با تکرار اجرای الگوریتم زمان اجرای دستور جمع تغییر نخواهد کرد.
-با این فرض می‌توانیم زمان اجرای کد اول را محاسبه کنیم:</p>
-<div class="math notranslate nohighlight">
-\[   T_{اولی} = t_{انتساب} + 99 \times ( t_{انتساب} + t_{جمع})\]</div>
-<p>حالا اگر بخواهیم در مورد زمان اجرای کد دوم اظهار نظر کنیم چه می‌توانیم بگوییم؟</p>
-<div class="math notranslate nohighlight">
-\[   T_{دومی}{(n)} = t_{انتساب} + (n-1) \times ( t_{انتساب} + t_{جمع})\]</div>
-<p>نکته حائز اهمیت در اینجا این است که زمان اجرای کد دوم بر خلاف کد اول، مقدار ثابتی ندارد و <strong>تابعی</strong> از ورودی است. به شکل دقیق‌تر، تابعی از <strong>اندازه</strong> ورودی است. اما چنین موضوعی چه اهمیتی برای ما، به عنوان طراحان الگوریتم دارد؟</p>
-<p>در دنیای کامپیوتر (و شاید تمام جهان!) <strong>فضا</strong> و <strong>زمان</strong> مهم‌ترین ارکان هستند. در طراحی الگوریتم‌ها، می‌کوشیم حتی‌المقدور الگوریتمی را ارائه کنیم که زمان اجرای آن کوتاه و فضای مصرفی آن اندک باشد. به همین دلیل لازم است که به نحوی در مورد فضا و زمان یک الگوریتم اظهار نظر کنیم و بتوانیم دو الگوریتم مختلف که برای یک مسأله ارائه شدند را بسنجیم و با هم مقایسه کنیم. در این بخش، زمان الگوریتم‌ها را مورد بررسی قرار می‌دیم و در بخش‌های بعدی روشی عمومی را معرفی می‌کنیم که با کمک آن هم بتوان زمان و هم فضا را با یکدیگر مقایسه نمود.</p>
-<p>برگردیم به کدها. اگر بخواهیم زمان اجرای دو کد گفته شده را با یکدیگر مقایسه کنیم، می‌توانیم به این شکل تحلیل کنیم که اگر <strong>اندازه ورودی</strong> در کد دوم، کمتر از ۱۰۰ باشد، آنگاه سرعت کد دوم بیشتر است و زمان اجرای کمتری دارد. اگر <strong>اندازه ورودی</strong> در کد دوم برابر با ۱۰۰ باشد، زمان‌های اجرا یکسان هستند و اگر <strong>اندازه ورودی</strong> در کد دوم بیش از ۱۰۰ باشد، زمان اجرای کد دوم بیشتر از کد اول خواهد بود.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>اندازه ورودی</th>
-<th>کد سریع‌تر</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>کمتر از ۱۰۰</td>
-<td>کد دوم</td>
-</tr>
-<tr>
-<td>۱۰۰</td>
-<td>برابر</td>
-</tr>
-<tr>
-<td>بیش از ۱۰۰</td>
-<td>کد اول</td>
-</tr>
-</tbody>
-</table><p>اگر بخواهیم به‌طور کلی صحبت کنیم، آیا کد دوم سریعتر از کد اول است یا کندتر از آن؟ آیا راهی وجود دارد که بتوانیم یک نظر کلی دهیم؟ یعنی در مقایسه دو کد (یا الگوریتم) بتوان با قاطعیت گفت که یا زمان اجرای برابری دارند یا زمان یکی از دیگری بیشتر است.
-پاسخ <strong>مثبت</strong> است. در واقع برای مقایسه زمان اجرای دو الگوریتم، لازم است که توابع زمان‌های اجراهای دو الگوریتم را با یکدیگر مقایسه کنیم. یعنی اگر بتوانیم یک روش قیاس برای توابع ارائه دهیم، آنگاه مقایسه زمان اجرای دو الگوریتم (و فضای مصرفی آن‌ها) کار دشواری نخواهد بود.
-قبل از این که به شرح روش مقایسه بپردازیم توجه به یک نکته بسیار ضروری است.</p>
+<p>در تحلیل الگوریتم‌ها (زمانی و فضایی)، همواره رفتار توابع را در <strong>بی‌نهایت</strong> بررسی می‌کنیم.
+ممکن است الگوریتمی که ارائه می‌شود برای ورودی‌های کوچک سرعت اجرای بسیار خوبی داشته باشد، اما با <strong>رشد</strong> ورودی، <strong>رشد تابع</strong> زمان اجرا بسیار زیاد باشد. یعنی در <strong>بی‌نهایت</strong> مقدار تابع زمان اجرا، به شدت افزایش یابد. مقوله‌ای که در طراحی الگوریتم برای ما اهمیت دارد، <strong>رشد توابع</strong> است. به همین دلیل است که رفتار تابع زمان اجرا به شکل حدی و در بی‌نهایت بررسی می‌شود. از دید الگوریتمی، تمامی الگوریتم‌هایی که رو مقادیر ثابت بحث می‌کنند (یعنی مانند کد اول ما، زمان اجرای آن‌ها تابعی از یک متغیر نیست و مقدار ثابتی دارد) زمان اجرای برابری دارند و هیچ‌کدام بر دیگری برتری ندارند. البته، زمان اجرای تمامی آن‌ها از الگوریتم‌هایی که تابع زمان اجرای آن‌ها، تابعی از ورودی است کمتر است و از نظر <strong>پیچیدگی زمانی</strong> بهتر هستند. پیچیدگی زمانی، همان زمان اجرای یک الگوریتم و پیچیدگی فضایی (یا پیچیدگی مکانی) همان فضای مصرفی یک الگوریتم است.</p>
+<p>با بررسی رفتار حدی می‌توان متوجه شد که مقادیر ثابت توابع، در رشد تابع اثر گذار نیستند. در واقع، بزرگترین جمله تابع تنها جمله‌ای است که باید در مقایسه لحاظ شود. حتی ضرایب ثابت بزرگترین جمله تابع هم در رشد تابع بی‌اثر هستند. در زیر پیچیدگی‌های زمانی الگوریتم‌های فرضی مختلف را به همراه جمله مؤثرشان آوردیم تا این موضوع روشن‌تر شود.</p>
+<p>$$T_{1}{(n)} =  t_{ساخت range} + n \times (t_{انتساب}+t_{print}) \approx n \times (t_{انتساب}+t_{print}) \approx n$$</p>
+<p>$$T_{2}{(n)} =  c_1 \times n^2 + 100 \approx c_1 \times n^2  \approx n^2$$</p>
+<p>$$T_{3}{(n)} = 999999 \times n^2 + 999999 \times n \approx c_1 \times 999999 n^2  \approx n^2$$</p>
+<p>$$T_{4}{(n)} = c_1 \times n + c_2 \times n \log{n} + 50 * t_{انتساب} \approx c_2 \times n \log{n} \approx n \log{n}$$</p>
+<p>می‌توان دید که از دید تحلیل و طراحی الگوریتم‌ها، گرچه دو تابع <span class="math notranslate nohighlight">\( T_{2} \)</span> و <span class="math notranslate nohighlight">\( T_{3} \)</span> با هم برابر نیستند اما رشد برابری دارند و یکسان در نظر گرفته می‌شوند.  حال، با توجه به حرف‌هایی که در این بخش زده شد، می‌توان گفت که کد اولی که در ابتدای بحث نوشته بودیم، از کد دوم سریع‌تر است. گرچه مقایسه این دو کد بی‌معنا است. چون اهداف هرچند مشابه، اما متفاوتی دارند. در زیر تصویری از مقایسه رشد توابع مختلف قرار داده شده است. با «نماد O» در بخش بعدی بیشتر آشنا خواهید شد.</p>
+<p><img alt="رشد توابع" src="../../../_images/fun_growth.png" /></p>
+<p>در بخش بعدی، نمادهایی را به شکل رسمی تعریف می‌کنیم تا بتوانیم حرف‌هایی که برای تحلیل الگوریتم‌ها زدیم را در قالب ریاضیات و توابع ریاضی بیان کنیم. بیان ریاضی کمک می‌کند تا در تعاریف خود محکم و دقیق باشیم و بنیان تعاریف خود را بر پایه‌های استوار ریاضیات قرار دهیم.</p>
 <div class="admonition important">
 <p class="admonition-title">مهم</p>
-<p>در تحلیل الگوریتم‌ها، همواره به ورودی‌های بسیار بسیار بزرگ(!) می‌اندیشیم. برای مقایسه توابع زمان اجرای دو الگوریتم (یا مقایسه جمله‌های تابع زمان اجرای یک الگوریتم) این نکته را مد نظر قرار می‌دهیم که برای ورودی‌های بسیار بسیار بزرگ (بی‌نهایت) آن‌ها را مقایسه می‌کنیم. <strong>چرا؟</strong></p>
+<p>مقایسه، تحلیل‌ها و نمادهایی که برای پیچیدگی زمانی الگوریتم‌ها بیان می‌شوند، بر روی پیچیدگی فضایی الگوریتم‌ها نیز، قابل اعمال و تعریف هستند.</p>
 </div>
-<p>باید بنویسم دلیلشو</p>
 </div>
 
 
@@ -303,10 +264,10 @@
             <div id="body-btn">
                 
                     
-                    <a href="../index.html" style="float:right;" title="بخش اول: آشنایی با ساختمان‌داده‌ها" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
+                    <a href="1-Algorithms.html" style="float:right;" title="الگوریتم‌ها" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="asymptotic-notation.html" style="float:left;" title="نمادهای مجانبی" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="3-Asymptotic%20Notation.html" style="float:left;" title="نمادهای مجانبی" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>

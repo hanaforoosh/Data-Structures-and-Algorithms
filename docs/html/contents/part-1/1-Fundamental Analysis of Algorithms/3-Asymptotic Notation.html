@@ -20,7 +20,7 @@
 
 
     
-         <title>نمادهای معیار و توابع مرسوم &mdash; ساختمان‌داده‌ها و الگوریتم‌ها  documentation</title>
+         <title>نمادهای مجانبی &mdash; ساختمان‌داده‌ها و الگوریتم‌ها  documentation</title>
     
 
 
@@ -42,9 +42,9 @@
         <link rel="index" title="فهرست" href="../../../genindex.html" />
         <link rel="search" title="جستجو" href="../../../search.html" />
         <link rel="top" title="ساختمان‌داده‌ها و الگوریتم‌ها  documentation" href="../../../index.html" />
-        <link rel="up" title="بخش اول: آشنایی با ساختمان‌داده‌ها" href="../index.html" />
+        <link rel="up" title="تحلیل بنیادین الگوریتم‌ها" href="index.html" />
         <link rel="next" title="ساختمان داده‌های پایه" href="../elementary-data-structures/README.html" />
-        <link rel="prev" title="نمادهای مجانبی" href="asymptotic-notation.html" />
+        <link rel="prev" title="رشد توابع" href="2-Growth%20of%20functions.html" />
 
 
 
@@ -121,9 +121,7 @@
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">مقدمه</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">بخش اول: آشنایی با ساختمان‌داده‌ها</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="README.html">رشد توابع</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asymptotic-notation.html">نمادهای مجانبی</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">نمادهای معیار و توابع مرسوم</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">تحلیل بنیادین الگوریتم‌ها</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/README.html">ساختمان داده‌های پایه</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/stack.html">پشته</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elementary-data-structures/queue.html">صف</a></li>
@@ -222,11 +220,11 @@
     
         <a href="../../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; نمادهای معیار و توابع مرسوم</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; نمادهای مجانبی</a>
     
     
         
-            <a href="../../../_sources/contents/part-1/growth-of-functions/standard-notations-and-common-functions.md.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
+            <a href="../../../_sources/contents/part-1/1-Fundamental Analysis of Algorithms/3-Asymptotic Notation.md.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
         
     
 </div>
@@ -237,7 +235,41 @@
 			        <div class="col-lg-12 text-content">
 				    
   <div class="section" id="id1">
-<h1>نمادهای معیار و توابع مرسوم<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<h1>نمادهای مجانبی<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<div class="section" id="o">
+<h2>O<a class="headerlink" href="#o" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>مجموعه توابعی که کران بالا برای تابع تعیین می‌کنند و به شکل زیر تعریف می‌شود:</p>
+<div class="math notranslate nohighlight">
+\[O(g(n))={f(n):\exists C,n_0&gt;0,\forall n \ge n_0: 0 \le f(n) \le c g(n)}\]</div>
+</div>
+<div class="section" id="id2">
+<h2>Ω<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>مجموعه توابعی که کران پایین برای تابع تعیین می‌کنند و به شکل زیر تعریف می‌شود:
+$$
+Ω(g(n))={f(n):\exists C,n_0&gt;0,\forall n \ge n_0: 0 \le c g(n) \le f(n)}
+$$</p>
+</div>
+<div class="section" id="id3">
+<h2>θ<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>مجموعه توابعی که هم کران بالا و هم کران پایین برای تابع تعیین می‌کنند و به شکل زیر تعریف می‌شود:
+$$
+θ(g(n))={f(n):\exists C1,C2,n_0&gt;0,\forall n \ge n_0: 0 \le C1 g(n) \le f(n) \le C2 g(n)}
+$$</p>
+</div>
+<div class="section" id="id4">
+<h2>o<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>مجموعه توابعی که کران بالا برای تابع تعیین می‌کنند اما هیچگاه برابر با اندازه تابع نمی‌شود و به شکل زیر تعریف می‌شود:
+$$
+o(g(n))={f(n):\exists C,n_0&gt;0,\forall n \ge n_0: 0 \le f(n) &lt; c g(n)}
+$$</p>
+</div>
+<div class="section" id="id5">
+<h2>ω<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>مجموعه توابعی که کران پایین برای تابع تعیین می‌کنند اما هیچگاه برابر با اندازه تابع نمی‌شود و به شکل زیر تعریف می‌شود:
+$$
+ω(g(n))={f(n):\exists C,n_0&gt;0,\forall n \ge n_0: 0 \le c g(n) &lt; f(n)}
+$$</p>
+</div>
 </div>
 
 
@@ -252,7 +284,7 @@
             <div id="body-btn">
                 
                     
-                    <a href="asymptotic-notation.html" style="float:right;" title="نمادهای مجانبی" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
+                    <a href="2-Growth%20of%20functions.html" style="float:right;" title="رشد توابع" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
                     <a href="../elementary-data-structures/README.html" style="float:left;" title="ساختمان داده‌های پایه" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
